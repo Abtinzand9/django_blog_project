@@ -10,7 +10,7 @@
     </h1>
     <ul>
     {% for article in articles %}
-        <li>written by {{article.author}} at {{article.create_date}}</li>
+        <li><a href="{{article.get_absolute_url}} ">written by {{article.author}} at {{article.create_date}}</a></li>
         <p>{{article.body}}</p>
         <hr>
     </ul>

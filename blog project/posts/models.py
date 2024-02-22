@@ -33,7 +33,7 @@ class Article(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("posts_detail", kwargs={"pk": self.pk})
+        return reverse("blog_detail", kwargs={"pk": self.pk})
     
     objects = models.Manager()
     publish = PublishedManager()
