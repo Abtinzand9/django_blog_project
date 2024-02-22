@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
 
+class PublishedManager(models.Manager):
+    def get_queryset(self) -> models.QuerySet:
+        return super(PublishedManager ,self).get_queryset().filter(status = 'published')
+
+
 class Article(models.Model):
     """a class to make articles"""
 
@@ -30,3 +35,5 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse("posts_detail", kwargs={"pk": self.pk})
     
+    objects = models.Manager()
+    publish = PublishedManager()
