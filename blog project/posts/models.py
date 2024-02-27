@@ -24,6 +24,7 @@ class Article(models.Model):
     create_date = models.DateTimeField(auto_now_add = True)
     modify_date = models.DateTimeField(default = timezone.now)
     status = models.CharField(max_length = 15 ,choices = STATUS_OF_ARTICLES , default = 'checking')
+    image = models.ImageField( upload_to='article_images', height_field=None, width_field=None, max_length=None)
 
     class Meta:
         ordering = ("create_date",)

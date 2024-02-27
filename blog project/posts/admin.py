@@ -11,7 +11,7 @@ class ArticleAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": (
-                'title' ,'body'
+                'title' ,'body' , 'image','author'
             ),
         }),
         ('important dates' , {

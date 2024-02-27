@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from .models import Article
 
-def blog_list(request):
+def home(request):
     context = {
         'articles' : Article.objects.all(),
         "publishs" : Article.publish.all()
     }
-    return render(request , 'posts/post_list.html' , context=context)
+    return render(request , 'index.html' , context=context)
 
 def blog_detail(request , pk):
     context ={
